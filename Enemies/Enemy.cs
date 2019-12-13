@@ -8,6 +8,6 @@ namespace TestProject
 {
     public abstract class Enemy : Entity
     {
-
+        public int ExperienceRewarded { get; set; }
     }
 }

@@ -11,12 +11,13 @@ namespace TestProject
         public Mage()
         {
             Title = "Mage";
-            Health = 80;
-            Mana = 100;
+            MaxHealth = 10;
+            Health = 10;
+            MaxMana = 10;
+            Mana = 10;
             Gold = 0;
             AttackDamage = 3;
-            AttackVariance = 2;
-            Armor = 2;
+            AttackVariance = 1;
         }
     }
 }

@@ -11,12 +11,13 @@ namespace TestProject
         public Warrior()
         {
             Title = "Warrior";
-            Health = 120;
-            Mana = 60;
+            MaxHealth = 14;
+            Health = 14;
+            MaxMana = 4;
+            Mana = 4;
             Gold = 0;
-            AttackDamage = 5;
-            AttackVariance = 2;
-            Armor = 4;
+            AttackDamage = 4;
+            AttackVariance = 1;
         }
     }
 }

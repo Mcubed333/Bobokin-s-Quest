@@ -8,6 +8,10 @@ namespace TestProject
 {
     public abstract class CharacterClass : Entity
     {
+        public int Level { get; set; }
+        public int Experience { get; set; }
+        public int TotalExperienceToNextLevel { get; set; }
+        public int MaxMana { get; set; }
         public int Mana { get; set; }
         public int Armor { get; set; }
         public int Gold { get; set; }

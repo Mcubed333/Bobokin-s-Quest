@@ -11,8 +11,9 @@ namespace TestProject
         public Boar()
         {
             Title = "Boar";
-            Health = 20;
-            AttackDamage = 3;
+            MaxHealth = 12;
+            Health = 12;
+            AttackDamage = 2;
             AttackVariance = 1;
         }
     }

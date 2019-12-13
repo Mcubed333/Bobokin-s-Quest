@@ -29,16 +29,11 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxEnemyTitle = new System.Windows.Forms.TextBox();
             this.labelEnemyTitle = new System.Windows.Forms.Label();
             this.labelCharacterGold = new System.Windows.Forms.Label();
-            this.textBoxCharacterGold = new System.Windows.Forms.TextBox();
             this.labelCharacterMana = new System.Windows.Forms.Label();
-            this.textBoxCharacterMana = new System.Windows.Forms.TextBox();
             this.labelCharacterHealth = new System.Windows.Forms.Label();
-            this.textBoxCharacterHealth = new System.Windows.Forms.TextBox();
             this.labelCharacterTitle = new System.Windows.Forms.Label();
-            this.textBoxCharacterTitle = new System.Windows.Forms.TextBox();
             this.labelCharacterInfo = new System.Windows.Forms.Label();
             this.buttonAttack = new System.Windows.Forms.Button();
             this.buttonCast = new System.Windows.Forms.Button();
@@ -46,7 +41,12 @@
             this.richTextBoxGameText = new System.Windows.Forms.RichTextBox();
             this.labelEnemyInfo = new System.Windows.Forms.Label();
             this.labelEnemyHealth = new System.Windows.Forms.Label();
-            this.textBoxEnemyHealth = new System.Windows.Forms.TextBox();
+            this.progressBarEnemyHealth = new System.Windows.Forms.ProgressBar();
+            this.progressBarCharacterHealth = new System.Windows.Forms.ProgressBar();
+            this.progressBarCharacterMana = new System.Windows.Forms.ProgressBar();
+            this.labelEnemyTitleValue = new System.Windows.Forms.Label();
+            this.labelCharacterTitleValue = new System.Windows.Forms.Label();
+            this.labelCharacterGoldValue = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,16 +63,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Controls.Add(this.textBoxEnemyTitle, 8, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelEnemyTitle, 7, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelCharacterGold, 7, 9);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxCharacterGold, 8, 9);
             this.tableLayoutPanel1.Controls.Add(this.labelCharacterMana, 7, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxCharacterMana, 8, 8);
             this.tableLayoutPanel1.Controls.Add(this.labelCharacterHealth, 7, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxCharacterHealth, 8, 7);
             this.tableLayoutPanel1.Controls.Add(this.labelCharacterTitle, 7, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxCharacterTitle, 8, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelCharacterInfo, 7, 5);
             this.tableLayoutPanel1.Controls.Add(this.buttonAttack, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.buttonCast, 3, 8);
@@ -80,7 +75,12 @@
             this.tableLayoutPanel1.Controls.Add(this.richTextBoxGameText, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelEnemyInfo, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelEnemyHealth, 7, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxEnemyHealth, 8, 2);
+            this.tableLayoutPanel1.Controls.Add(this.progressBarEnemyHealth, 8, 2);
+            this.tableLayoutPanel1.Controls.Add(this.progressBarCharacterHealth, 8, 7);
+            this.tableLayoutPanel1.Controls.Add(this.progressBarCharacterMana, 8, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelEnemyTitleValue, 8, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelCharacterTitleValue, 8, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelCharacterGoldValue, 8, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -97,19 +97,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 561);
             this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // textBoxEnemyTitle
-            // 
-            this.textBoxEnemyTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.textBoxEnemyTitle, 2);
-            this.textBoxEnemyTitle.Location = new System.Drawing.Point(707, 59);
-            this.textBoxEnemyTitle.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.textBoxEnemyTitle.Name = "textBoxEnemyTitle";
-            this.textBoxEnemyTitle.ReadOnly = true;
-            this.textBoxEnemyTitle.Size = new System.Drawing.Size(162, 20);
-            this.textBoxEnemyTitle.TabIndex = 18;
-            this.textBoxEnemyTitle.TabStop = false;
             // 
             // labelEnemyTitle
             // 
@@ -133,18 +120,6 @@
             this.labelCharacterGold.TabIndex = 11;
             this.labelCharacterGold.Text = "Gold:";
             // 
-            // textBoxCharacterGold
-            // 
-            this.textBoxCharacterGold.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.textBoxCharacterGold, 2);
-            this.textBoxCharacterGold.Location = new System.Drawing.Point(707, 507);
-            this.textBoxCharacterGold.Name = "textBoxCharacterGold";
-            this.textBoxCharacterGold.ReadOnly = true;
-            this.textBoxCharacterGold.Size = new System.Drawing.Size(174, 20);
-            this.textBoxCharacterGold.TabIndex = 12;
-            this.textBoxCharacterGold.TabStop = false;
-            // 
             // labelCharacterMana
             // 
             this.labelCharacterMana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -155,19 +130,6 @@
             this.labelCharacterMana.Size = new System.Drawing.Size(37, 13);
             this.labelCharacterMana.TabIndex = 2;
             this.labelCharacterMana.Text = "Mana:";
-            // 
-            // textBoxCharacterMana
-            // 
-            this.textBoxCharacterMana.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.textBoxCharacterMana, 2);
-            this.textBoxCharacterMana.Location = new System.Drawing.Point(707, 451);
-            this.textBoxCharacterMana.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.textBoxCharacterMana.Name = "textBoxCharacterMana";
-            this.textBoxCharacterMana.ReadOnly = true;
-            this.textBoxCharacterMana.Size = new System.Drawing.Size(162, 20);
-            this.textBoxCharacterMana.TabIndex = 6;
-            this.textBoxCharacterMana.TabStop = false;
             // 
             // labelCharacterHealth
             // 
@@ -180,19 +142,6 @@
             this.labelCharacterHealth.TabIndex = 1;
             this.labelCharacterHealth.Text = "Health: ";
             // 
-            // textBoxCharacterHealth
-            // 
-            this.textBoxCharacterHealth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.textBoxCharacterHealth, 2);
-            this.textBoxCharacterHealth.Location = new System.Drawing.Point(707, 395);
-            this.textBoxCharacterHealth.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.textBoxCharacterHealth.Name = "textBoxCharacterHealth";
-            this.textBoxCharacterHealth.ReadOnly = true;
-            this.textBoxCharacterHealth.Size = new System.Drawing.Size(162, 20);
-            this.textBoxCharacterHealth.TabIndex = 5;
-            this.textBoxCharacterHealth.TabStop = false;
-            // 
             // labelCharacterTitle
             // 
             this.labelCharacterTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -203,19 +152,6 @@
             this.labelCharacterTitle.Size = new System.Drawing.Size(30, 13);
             this.labelCharacterTitle.TabIndex = 3;
             this.labelCharacterTitle.Text = "Title:";
-            // 
-            // textBoxCharacterTitle
-            // 
-            this.textBoxCharacterTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.textBoxCharacterTitle, 2);
-            this.textBoxCharacterTitle.Location = new System.Drawing.Point(707, 339);
-            this.textBoxCharacterTitle.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.textBoxCharacterTitle.Name = "textBoxCharacterTitle";
-            this.textBoxCharacterTitle.ReadOnly = true;
-            this.textBoxCharacterTitle.Size = new System.Drawing.Size(162, 20);
-            this.textBoxCharacterTitle.TabIndex = 4;
-            this.textBoxCharacterTitle.TabStop = false;
             // 
             // labelCharacterInfo
             // 
@@ -296,18 +232,68 @@
             this.labelEnemyHealth.TabIndex = 14;
             this.labelEnemyHealth.Text = "Health:";
             // 
-            // textBoxEnemyHealth
+            // progressBarEnemyHealth
             // 
-            this.textBoxEnemyHealth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.progressBarEnemyHealth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.textBoxEnemyHealth, 2);
-            this.textBoxEnemyHealth.Location = new System.Drawing.Point(707, 115);
-            this.textBoxEnemyHealth.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.textBoxEnemyHealth.Name = "textBoxEnemyHealth";
-            this.textBoxEnemyHealth.ReadOnly = true;
-            this.textBoxEnemyHealth.Size = new System.Drawing.Size(162, 20);
-            this.textBoxEnemyHealth.TabIndex = 16;
-            this.textBoxEnemyHealth.TabStop = false;
+            this.tableLayoutPanel1.SetColumnSpan(this.progressBarEnemyHealth, 2);
+            this.progressBarEnemyHealth.Location = new System.Drawing.Point(707, 115);
+            this.progressBarEnemyHealth.Name = "progressBarEnemyHealth";
+            this.progressBarEnemyHealth.Size = new System.Drawing.Size(174, 23);
+            this.progressBarEnemyHealth.TabIndex = 19;
+            // 
+            // progressBarCharacterHealth
+            // 
+            this.progressBarCharacterHealth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.progressBarCharacterHealth, 2);
+            this.progressBarCharacterHealth.Location = new System.Drawing.Point(707, 395);
+            this.progressBarCharacterHealth.Name = "progressBarCharacterHealth";
+            this.progressBarCharacterHealth.Size = new System.Drawing.Size(174, 23);
+            this.progressBarCharacterHealth.TabIndex = 20;
+            // 
+            // progressBarCharacterMana
+            // 
+            this.progressBarCharacterMana.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.progressBarCharacterMana, 2);
+            this.progressBarCharacterMana.Location = new System.Drawing.Point(707, 451);
+            this.progressBarCharacterMana.Name = "progressBarCharacterMana";
+            this.progressBarCharacterMana.Size = new System.Drawing.Size(174, 23);
+            this.progressBarCharacterMana.TabIndex = 21;
+            // 
+            // labelEnemyTitleValue
+            // 
+            this.labelEnemyTitleValue.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelEnemyTitleValue, 2);
+            this.labelEnemyTitleValue.Location = new System.Drawing.Point(707, 62);
+            this.labelEnemyTitleValue.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.labelEnemyTitleValue.Name = "labelEnemyTitleValue";
+            this.labelEnemyTitleValue.Size = new System.Drawing.Size(23, 13);
+            this.labelEnemyTitleValue.TabIndex = 22;
+            this.labelEnemyTitleValue.Text = "null";
+            // 
+            // labelCharacterTitleValue
+            // 
+            this.labelCharacterTitleValue.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelCharacterTitleValue, 2);
+            this.labelCharacterTitleValue.Location = new System.Drawing.Point(707, 342);
+            this.labelCharacterTitleValue.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.labelCharacterTitleValue.Name = "labelCharacterTitleValue";
+            this.labelCharacterTitleValue.Size = new System.Drawing.Size(23, 13);
+            this.labelCharacterTitleValue.TabIndex = 23;
+            this.labelCharacterTitleValue.Text = "null";
+            // 
+            // labelCharacterGoldValue
+            // 
+            this.labelCharacterGoldValue.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelCharacterGoldValue, 2);
+            this.labelCharacterGoldValue.Location = new System.Drawing.Point(707, 510);
+            this.labelCharacterGoldValue.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.labelCharacterGoldValue.Name = "labelCharacterGoldValue";
+            this.labelCharacterGoldValue.Size = new System.Drawing.Size(23, 13);
+            this.labelCharacterGoldValue.TabIndex = 24;
+            this.labelCharacterGoldValue.Text = "null";
             // 
             // GameScreen
             // 
@@ -331,19 +317,19 @@
         private System.Windows.Forms.Label labelCharacterMana;
         private System.Windows.Forms.Label labelCharacterHealth;
         private System.Windows.Forms.Label labelCharacterTitle;
-        private System.Windows.Forms.TextBox textBoxCharacterTitle;
-        private System.Windows.Forms.TextBox textBoxCharacterHealth;
-        private System.Windows.Forms.TextBox textBoxCharacterMana;
         private System.Windows.Forms.RichTextBox richTextBoxGameText;
         private System.Windows.Forms.Button buttonAttack;
         private System.Windows.Forms.Button buttonCast;
         private System.Windows.Forms.Button buttonRun;
         private System.Windows.Forms.Label labelCharacterGold;
-        private System.Windows.Forms.TextBox textBoxCharacterGold;
         private System.Windows.Forms.Label labelEnemyInfo;
         private System.Windows.Forms.Label labelEnemyHealth;
-        private System.Windows.Forms.TextBox textBoxEnemyHealth;
         private System.Windows.Forms.Label labelEnemyTitle;
-        private System.Windows.Forms.TextBox textBoxEnemyTitle;
+        private System.Windows.Forms.ProgressBar progressBarEnemyHealth;
+        private System.Windows.Forms.ProgressBar progressBarCharacterHealth;
+        private System.Windows.Forms.ProgressBar progressBarCharacterMana;
+        private System.Windows.Forms.Label labelEnemyTitleValue;
+        private System.Windows.Forms.Label labelCharacterTitleValue;
+        private System.Windows.Forms.Label labelCharacterGoldValue;
     }
 }

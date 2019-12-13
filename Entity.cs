@@ -9,6 +9,7 @@ namespace TestProject
     public abstract class Entity
     {
         public string Title { get; set; }
+        public int MaxHealth { get; set; }
         public int Health { get; set; }
         public int AttackDamage { get; set; }
         public int AttackVariance { get; set; }

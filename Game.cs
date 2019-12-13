@@ -11,7 +11,7 @@ namespace TestProject
         public CharacterClass character;
         public List<Enemy> enemies;
         public Enemy currentEnemy;
-        private Random random = new Random();
+        private Random random;
         public Game(CharacterClass characterClass)
         {
             this.character = characterClass;
@@ -20,11 +20,14 @@ namespace TestProject
                 new Imp(),
                 new Boar()
             };
+
+            random = new Random();
         }
 
         public void getRandomEnemy()
         {
-            currentEnemy = enemies[random.Next(0, enemies.Count)];
+            int index = random.Next(0, enemies.Count);
+            currentEnemy = enemies[index];
         }
     }
 }

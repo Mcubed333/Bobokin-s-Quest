@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace TestProject
@@ -20,6 +22,7 @@ namespace TestProject
 
 
             displayText("Hello " + game.character.Title + ", welcome to the game!\n");
+            clearGameText();
             generateRandomEncounter();
             updateUI();
         }
@@ -34,14 +37,55 @@ namespace TestProject
 
         private void updateUI()
         {
-            this.textBoxCharacterTitle.Text = game.character.Title;
-            this.textBoxCharacterHealth.Text = game.character.Health.ToString();
-            this.textBoxCharacterMana.Text = game.character.Mana.ToString();
-            if (game.currentEnemy != null)
+            labelCharacterTitleValue.Text = game.character.Title;
+
+            progressBarCharacterHealth.Minimum = 0;
+            progressBarCharacterHealth.Maximum = game.character.MaxHealth;
+            progressBarCharacterHealth.Value = game.character.Health;
+            progressBarCharacterHealth.Refresh();
+
+            progressBarCharacterMana.Minimum = 0;
+            progressBarCharacterMana.Maximum = game.character.MaxMana;
+            progressBarCharacterMana.Value = game.character.Mana;
+            progressBarCharacterMana.Refresh();
+
+            if (game.currentEnemy != null && game.currentEnemy.IsAlive)
             {
-                this.textBoxEnemyTitle.Text = game.currentEnemy.Title.ToString();
-                this.textBoxEnemyHealth.Text = game.currentEnemy.Health.ToString();
+                labelEnemyTitleValue.Text = game.currentEnemy.Title.ToString();
+                progressBarEnemyHealth.Minimum = 0;
+                progressBarEnemyHealth.Maximum = game.currentEnemy.MaxHealth;
+                progressBarEnemyHealth.Value = game.currentEnemy.Health;
+                progressBarEnemyHealth.Refresh();
             }
+            else
+            {
+                labelEnemyTitleValue.Text = string.Empty;
+                progressBarEnemyHealth.Maximum = 1;
+                progressBarEnemyHealth.Value = 0;
+                progressBarEnemyHealth.Refresh();
+            }
+        }
+
+        private void buttonAttack_Click(object sender, EventArgs e)
+        {
+            clearGameText();
+
+            displayText(game.character.Title + " attacked the " + game.currentEnemy.Title + "!");
+            displayText("You have inflicted " + game.character.Attack(game.currentEnemy) + " damage");
+            
+            if (game.currentEnemy.IsAlive)
+            {
+                displayText(game.currentEnemy.Title + " attacked the " + game.character.Title + "!");
+                displayText(game.currentEnemy.Title + " has inflicted " + game.currentEnemy.Attack(game.character) + " damage");
+            }
+            else
+            {
+                displayText(game.character.Title + " has defeated the " + game.currentEnemy.Title + ".");
+                game.getRandomEnemy();
+            }
+
+
+            updateUI();
         }
 
         private void displayText(string text)
@@ -58,26 +102,17 @@ namespace TestProject
             }
         }
 
-        private void buttonAttack_Click(object sender, EventArgs e)
-        {
-            displayText(game.character.Title + " attacked the " + game.currentEnemy.Title + "!");
-            displayText("You have inflicted " + game.character.Attack(game.currentEnemy) + " damage");
-            
-            if (game.currentEnemy.IsAlive)
-            {
-                displayText(game.currentEnemy.Title + " attacked the " + game.character.Title + "!");
-                displayText(game.currentEnemy.Title + " has inflicted " + game.currentEnemy.Attack(game.character) + " damage");
-            }
-
-            updateUI();
-        }
-
         private void richTextBoxGameText_TextChanged(object sender, EventArgs e)
         {
             // set the current caret position to the end
             richTextBoxGameText.SelectionStart = richTextBoxGameText.Text.Length;
             // scroll it automatically
             richTextBoxGameText.ScrollToCaret();
+        }
+
+        private void clearGameText()
+        {
+            richTextBoxGameText.Clear();
         }
     }
 }
