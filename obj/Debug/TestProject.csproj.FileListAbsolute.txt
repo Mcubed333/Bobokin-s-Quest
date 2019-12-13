@@ -1,0 +1,11 @@
+C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.csprojAssemblyReference.cache
+C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.Properties.Resources.resources
+C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.csproj.GenerateResource.cache
+C:\Users\mamorris\source\repos\TestProject\bin\Debug\TestProject.exe.config
+C:\Users\mamorris\source\repos\TestProject\bin\Debug\TestProject.exe
+C:\Users\mamorris\source\repos\TestProject\bin\Debug\TestProject.pdb
+C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.exe
+C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.pdb
+C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.Menu.resources
+C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.ChooseClass.resources
+C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.GameScreen.resources
