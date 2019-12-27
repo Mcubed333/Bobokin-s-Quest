@@ -19,7 +19,7 @@ namespace TestProject
 
         private void buttonChooseWarrior_Click(object sender, EventArgs e)
         {
-            startGame(new Warrior());
+            startGame(new Barbarian());
         }
 
         private void buttonChooseRogue_Click(object sender, EventArgs e)
@@ -37,7 +37,8 @@ namespace TestProject
             this.Hide();
             Game game = new Game(characterClass);
             GameScreen gameScreen = new GameScreen(game);
-            gameScreen.Show();
+            gameScreen.ShowDialog();
+            this.Close();
         }
     }
 }

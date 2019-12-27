@@ -15,6 +15,9 @@ namespace TestProject
             Health = 12;
             AttackDamage = 2;
             AttackVariance = 1;
+            Portrait = Properties.Resources.boar;
+            GoldRewarded = 3;
+            ExperienceRewarded = 4;
         }
     }
 }

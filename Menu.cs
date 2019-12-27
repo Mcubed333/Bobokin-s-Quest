@@ -27,7 +27,8 @@ namespace TestProject
         private void buttonStart_Click(object sender, EventArgs e)
         {
             this.Hide();
-            chooseClass.Show();
+            chooseClass.ShowDialog();
+            this.Close();
         }
     }
 }

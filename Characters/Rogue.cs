@@ -18,6 +18,7 @@ namespace TestProject
             Gold = 0;
             AttackDamage = 4;
             AttackVariance = 2;
+            Portrait = Properties.Resources.rog;
         }
     }
 }

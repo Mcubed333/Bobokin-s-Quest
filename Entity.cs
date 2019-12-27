@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace TestProject
         public int AttackDamage { get; set; }
         public int AttackVariance { get; set; }
         public bool IsAlive { get; set; }
+        public Image Portrait { get; set; }
 
         public Entity()
         {

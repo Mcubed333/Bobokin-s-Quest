@@ -9,5 +9,6 @@ namespace TestProject
     public abstract class Enemy : Entity
     {
         public int ExperienceRewarded { get; set; }
+        public int GoldRewarded { get; set; }
     }
 }

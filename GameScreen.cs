@@ -19,7 +19,8 @@ namespace TestProject
             textTimer.Interval = 35;
             textTimer.Tick += new System.EventHandler(textTimer_Tick);
             textTimer.Start();
-
+            // load character image
+            pictureBoxCharacter.Image = game.character.Portrait;
 
             displayText("Hello " + game.character.Title + ", welcome to the game!\n");
             clearGameText();
@@ -30,6 +31,8 @@ namespace TestProject
         private void generateRandomEncounter()
         {
             game.getRandomEnemy();
+            pictureBoxEnemy.Image = game.currentEnemy.Portrait;
+            labelEnemy.Text = game.currentEnemy.Title;
             displayText("Oh no! A " + game.currentEnemy.Title + " has appeared!");
             displayText("What would you like to do?\n");
             updateUI();
@@ -37,42 +40,52 @@ namespace TestProject
 
         private void updateUI()
         {
-            labelCharacterTitleValue.Text = game.character.Title;
+            labelCharacter.Text = game.character.Title;
 
             progressBarCharacterHealth.Minimum = 0;
             progressBarCharacterHealth.Maximum = game.character.MaxHealth;
             progressBarCharacterHealth.Value = game.character.Health;
             progressBarCharacterHealth.Refresh();
+            labelCharacterHealthOutOfTotal.Text = game.character.Health + @"\" + game.character.MaxHealth;
 
             progressBarCharacterMana.Minimum = 0;
             progressBarCharacterMana.Maximum = game.character.MaxMana;
             progressBarCharacterMana.Value = game.character.Mana;
             progressBarCharacterMana.Refresh();
+            labelCharacterManaOutOfTotal.Text = game.character.Mana + @"\" + game.character.MaxMana;
+
+            labelCharacterGoldValue.Text = game.character.Gold.ToString();
 
             if (game.currentEnemy != null && game.currentEnemy.IsAlive)
             {
-                labelEnemyTitleValue.Text = game.currentEnemy.Title.ToString();
+                labelEnemy.Text = game.currentEnemy.Title.ToString();
                 progressBarEnemyHealth.Minimum = 0;
                 progressBarEnemyHealth.Maximum = game.currentEnemy.MaxHealth;
                 progressBarEnemyHealth.Value = game.currentEnemy.Health;
                 progressBarEnemyHealth.Refresh();
+                labelEnemyHealthOutOfTotal.Text = game.currentEnemy.Health+ @"\" + game.currentEnemy.MaxHealth;
             }
             else
             {
-                labelEnemyTitleValue.Text = string.Empty;
+                labelEnemy.Text = string.Empty;
                 progressBarEnemyHealth.Maximum = 1;
                 progressBarEnemyHealth.Value = 0;
+                pictureBoxEnemy.Image = null;
+                labelEnemy.Text = String.Empty;
                 progressBarEnemyHealth.Refresh();
             }
         }
 
-        private void buttonAttack_Click(object sender, EventArgs e)
+        private void attackEnemy()
         {
             clearGameText();
 
             displayText(game.character.Title + " attacked the " + game.currentEnemy.Title + "!");
-            displayText("You have inflicted " + game.character.Attack(game.currentEnemy) + " damage");
-            
+
+            int damageInflicted = game.character.Attack(game.currentEnemy);
+            displayText("You have inflicted " + damageInflicted + " damage");
+            Shake(damageInflicted);
+
             if (game.currentEnemy.IsAlive)
             {
                 displayText(game.currentEnemy.Title + " attacked the " + game.character.Title + "!");
@@ -81,7 +94,11 @@ namespace TestProject
             else
             {
                 displayText(game.character.Title + " has defeated the " + game.currentEnemy.Title + ".");
-                game.getRandomEnemy();
+                displayText(game.currentEnemy.Title + " has dropped " + game.currentEnemy.GoldRewarded + " gold and " + game.currentEnemy.ExperienceRewarded + " experience.");
+                game.character.Gold += game.currentEnemy.GoldRewarded;
+                game.character.Experience += game.currentEnemy.ExperienceRewarded;
+
+                game.currentEnemy = null;
             }
 
 
@@ -90,7 +107,23 @@ namespace TestProject
 
         private void displayText(string text)
         {
+            DisableControls(this);
+            if (textToDisplay == String.Empty)
+                textTimer.Start();
             textToDisplay += text + "\n";
+        }
+
+        public void Shake(int amplitude)
+        {
+            var original = this.Location;
+            var rnd = new Random(1337);
+            int shake_amplitude = amplitude;
+            for (int i = 0; i < amplitude*2; i++)
+            {
+                this.Location = new Point(original.X + rnd.Next(-shake_amplitude, shake_amplitude), original.Y + rnd.Next(-shake_amplitude, shake_amplitude));
+                System.Threading.Thread.Sleep(20);
+            }
+            this.Location = original;
         }
 
         private void textTimer_Tick(object sender, EventArgs e)
@@ -99,6 +132,11 @@ namespace TestProject
             {
                 richTextBoxGameText.Text += textToDisplay[0];
                 textToDisplay = textToDisplay.Substring(1, textToDisplay.Length - 1);
+            }
+            else
+            {
+                EnableControls(this);
+                textTimer.Stop();
             }
         }
 
@@ -113,6 +151,26 @@ namespace TestProject
         private void clearGameText()
         {
             richTextBoxGameText.Clear();
+        }
+
+        private void DisableControls(Form form)
+        {
+            foreach (Control c in form.Controls)
+            {
+                c.Enabled = false;
+            }
+        }
+
+        private void EnableControls(Form form)
+        {
+            foreach (Control c in form.Controls)
+            {
+                c.Enabled = true;
+            }
+        }
+        private void buttonAttack_Click(object sender, EventArgs e)
+        {
+            attackEnemy();
         }
     }
 }

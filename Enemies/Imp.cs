@@ -15,6 +15,9 @@ namespace TestProject
             Health = 10;
             AttackDamage = 2;
             AttackVariance = 1;
+            Portrait = Properties.Resources.imp;
+            GoldRewarded = 2;
+            ExperienceRewarded = 3;
         }
     }
 }

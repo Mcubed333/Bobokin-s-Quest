@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TestProject
 {
-    public class Warrior : CharacterClass
+    public class Barbarian : CharacterClass
     {
-        public Warrior()
+        public Barbarian()
         {
-            Title = "Warrior";
+            Title = "Barbarian";
             MaxHealth = 14;
             Health = 14;
             MaxMana = 4;
@@ -18,6 +19,7 @@ namespace TestProject
             Gold = 0;
             AttackDamage = 4;
             AttackVariance = 1;
+            Portrait = Properties.Resources.barb;
         }
     }
 }

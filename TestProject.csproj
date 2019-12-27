@@ -74,7 +74,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Characters\Rogue.cs" />
-    <Compile Include="Characters\Warrior.cs" />
+    <Compile Include="Characters\Barbarian.cs" />
     <EmbeddedResource Include="ChooseClass.resx">
       <DependentUpon>ChooseClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +106,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\mage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\barb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\rog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\boar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\imp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

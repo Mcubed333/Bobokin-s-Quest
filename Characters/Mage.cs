@@ -18,6 +18,7 @@ namespace TestProject
             Gold = 0;
             AttackDamage = 3;
             AttackVariance = 1;
+            Portrait = Properties.Resources.mage;
         }
     }
 }

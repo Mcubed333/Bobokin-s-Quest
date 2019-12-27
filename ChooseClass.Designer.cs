@@ -30,7 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelChoose = new System.Windows.Forms.Label();
-            this.buttonChooseWarrior = new System.Windows.Forms.Button();
+            this.buttonChooseBarbarian = new System.Windows.Forms.Button();
             this.buttonChooseRogue = new System.Windows.Forms.Button();
             this.buttonChooseMage = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -50,7 +50,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.Controls.Add(this.labelChoose, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.buttonChooseWarrior, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.buttonChooseBarbarian, 4, 4);
             this.tableLayoutPanel1.Controls.Add(this.buttonChooseRogue, 4, 6);
             this.tableLayoutPanel1.Controls.Add(this.buttonChooseMage, 4, 8);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -82,17 +82,17 @@
             this.labelChoose.TabIndex = 0;
             this.labelChoose.Text = "Choose a class";
             // 
-            // buttonChooseWarrior
+            // buttonChooseBarbarian
             // 
-            this.buttonChooseWarrior.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel1.SetColumnSpan(this.buttonChooseWarrior, 2);
-            this.buttonChooseWarrior.Location = new System.Drawing.Point(339, 184);
-            this.buttonChooseWarrior.Name = "buttonChooseWarrior";
-            this.buttonChooseWarrior.Size = new System.Drawing.Size(121, 36);
-            this.buttonChooseWarrior.TabIndex = 1;
-            this.buttonChooseWarrior.Text = "Warrior";
-            this.buttonChooseWarrior.UseVisualStyleBackColor = true;
-            this.buttonChooseWarrior.Click += new System.EventHandler(this.buttonChooseWarrior_Click);
+            this.buttonChooseBarbarian.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel1.SetColumnSpan(this.buttonChooseBarbarian, 2);
+            this.buttonChooseBarbarian.Location = new System.Drawing.Point(339, 184);
+            this.buttonChooseBarbarian.Name = "buttonChooseBarbarian";
+            this.buttonChooseBarbarian.Size = new System.Drawing.Size(121, 36);
+            this.buttonChooseBarbarian.TabIndex = 1;
+            this.buttonChooseBarbarian.Text = "Barbarian";
+            this.buttonChooseBarbarian.UseVisualStyleBackColor = true;
+            this.buttonChooseBarbarian.Click += new System.EventHandler(this.buttonChooseWarrior_Click);
             // 
             // buttonChooseRogue
             // 
@@ -137,7 +137,7 @@
 
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label labelChoose;
-        private System.Windows.Forms.Button buttonChooseWarrior;
+        private System.Windows.Forms.Button buttonChooseBarbarian;
         private System.Windows.Forms.Button buttonChooseRogue;
         private System.Windows.Forms.Button buttonChooseMage;
     }
