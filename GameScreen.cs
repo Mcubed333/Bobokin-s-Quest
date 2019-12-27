@@ -22,7 +22,7 @@ namespace TestProject
             // load character image
             pictureBoxCharacter.Image = game.character.Portrait;
 
-            displayText("Hello " + game.character.Title + ", welcome to the game!\n");
+            displayText("Hello " + game.character.Title + ", welcome to Bobokin's Quest for the Salty Yoga Queen!\n");
             clearGameText();
             generateRandomEncounter();
             updateUI();
@@ -30,6 +30,8 @@ namespace TestProject
 
         private void generateRandomEncounter()
         {
+            clearGameText();
+            buttonNewEncounter.Hide();
             game.getRandomEnemy();
             pictureBoxEnemy.Image = game.currentEnemy.Portrait;
             labelEnemy.Text = game.currentEnemy.Title;
@@ -97,8 +99,10 @@ namespace TestProject
                 displayText(game.currentEnemy.Title + " has dropped " + game.currentEnemy.GoldRewarded + " gold and " + game.currentEnemy.ExperienceRewarded + " experience.");
                 game.character.Gold += game.currentEnemy.GoldRewarded;
                 game.character.Experience += game.currentEnemy.ExperienceRewarded;
+                buttonNewEncounter.Show();
 
                 game.currentEnemy = null;
+                
             }
 
 
@@ -171,6 +175,11 @@ namespace TestProject
         private void buttonAttack_Click(object sender, EventArgs e)
         {
             attackEnemy();
+        }
+
+        private void buttonNewEncounter_Click(object sender, EventArgs e)
+        {
+            generateRandomEncounter();
         }
     }
 }

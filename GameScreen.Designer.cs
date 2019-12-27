@@ -48,6 +48,7 @@
             this.labelEnemyHealthOutOfTotal = new System.Windows.Forms.Label();
             this.labelCharacterHealthOutOfTotal = new System.Windows.Forms.Label();
             this.labelCharacterManaOutOfTotal = new System.Windows.Forms.Label();
+            this.buttonNewEncounter = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEnemy)).BeginInit();
@@ -92,6 +93,7 @@
             this.tableLayoutPanel1.Controls.Add(this.labelEnemyHealth, 12, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelCharacterGoldValue, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.labelCharacterGold, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.buttonNewEncounter, 6, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -320,6 +322,18 @@
             this.labelCharacterManaOutOfTotal.TabIndex = 29;
             this.labelCharacterManaOutOfTotal.Text = "null";
             // 
+            // buttonNewEncounter
+            // 
+            this.buttonNewEncounter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel1.SetColumnSpan(this.buttonNewEncounter, 2);
+            this.buttonNewEncounter.Location = new System.Drawing.Point(437, 375);
+            this.buttonNewEncounter.Name = "buttonNewEncounter";
+            this.buttonNewEncounter.Size = new System.Drawing.Size(105, 36);
+            this.buttonNewEncounter.TabIndex = 30;
+            this.buttonNewEncounter.Text = "Find New Encounter";
+            this.buttonNewEncounter.UseVisualStyleBackColor = true;
+            this.buttonNewEncounter.Click += new System.EventHandler(this.buttonNewEncounter_Click);
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,5 +373,6 @@
         private System.Windows.Forms.Label labelEnemyHealthOutOfTotal;
         private System.Windows.Forms.Label labelCharacterHealthOutOfTotal;
         private System.Windows.Forms.Label labelCharacterManaOutOfTotal;
+        private System.Windows.Forms.Button buttonNewEncounter;
     }
 }

@@ -48,9 +48,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Controls.Add(this.labelTitle, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonStart, 4, 5);
             this.tableLayoutPanel1.Controls.Add(this.buttonExit, 4, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelTitle, 2, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -72,13 +72,15 @@
             // 
             this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTitle.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.labelTitle, 4);
+            this.tableLayoutPanel1.SetColumnSpan(this.labelTitle, 6);
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(314, 56);
+            this.labelTitle.Location = new System.Drawing.Point(179, 57);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(251, 55);
+            this.tableLayoutPanel1.SetRowSpan(this.labelTitle, 2);
+            this.labelTitle.Size = new System.Drawing.Size(521, 110);
             this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "The Game";
+            this.labelTitle.Text = "Bobokin\'s Quest for the Salty Yoga Queen";
+            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonStart
             // 

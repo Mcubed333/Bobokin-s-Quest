@@ -15,19 +15,24 @@ namespace TestProject
         public Game(CharacterClass characterClass)
         {
             this.character = characterClass;
-            enemies = new List<Enemy> 
-            {
-                new Imp(),
-                new Boar()
-            };
 
             random = new Random();
         }
 
         public void getRandomEnemy()
         {
+            refreshEnemies();
             int index = random.Next(0, enemies.Count);
             currentEnemy = enemies[index];
+        }
+
+        private void refreshEnemies()
+        {
+            enemies = new List<Enemy>
+            {
+                new Imp(),
+                new Boar()
+            };
         }
     }
 }
