@@ -17,12 +17,12 @@ namespace TestProject
             Strength = 3;
             AttackVariance = 1;
 
-            Intellect = 7;
-            Mana = Intellect;
+            Intellect = 4;
+            Mana = MaxMana;
 
             Dexterity = 0;
 
-            Vitality = 10;
+            Vitality = 5;
             Health = MaxHealth;
 
             Portrait = Properties.Resources.mage;

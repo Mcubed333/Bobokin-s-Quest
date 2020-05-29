@@ -12,7 +12,7 @@ namespace TestProject
         {
             Title = "Rogue";
 
-            Vitality = 12;
+            Vitality = 6;
             Health = MaxHealth;
 
             Gold = 5;
@@ -20,8 +20,8 @@ namespace TestProject
             Strength = 4;
             AttackVariance = 2;
 
-            Intellect = 2;
-            Mana = Intellect;
+            Intellect = 1;
+            Mana = MaxMana;
 
             Dexterity = 4;
             

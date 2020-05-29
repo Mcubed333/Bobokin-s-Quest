@@ -11,7 +11,7 @@ namespace TestProject
         public Boar()
         {
             Title = "Boar";
-            Vitality = 12;
+            Vitality = 6;
             Health = MaxHealth;
             Strength = 3;
             Intellect = 0;

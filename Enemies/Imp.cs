@@ -11,7 +11,7 @@ namespace TestProject
         public Imp()
         {
             Title = "Imp";
-            Vitality = 10;
+            Vitality = 5;
             Health = MaxHealth;
             Strength = 2;
             Intellect = 0;

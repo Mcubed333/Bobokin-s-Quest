@@ -16,10 +16,10 @@ namespace TestProject
         public int Intellect { get; set; }
         public int Dexterity { get; set; }
         public int Vitality { get; set; }
-        public int MaxMana { get { return Intellect; } }
+        public int MaxMana { get { return Intellect *2; } }
         public int Mana { get; set; }
         public int Armor { get; set; }
-        public int MaxHealth { get { return Vitality; } }
+        public int MaxHealth { get { return Vitality *2; } }
         public int Health { get; set; }
         public int AttackDamage { get { return Strength; } }
         public int AttackVariance { get; set; }
@@ -42,7 +42,7 @@ namespace TestProject
             damage.DamageInflicted = random.Next(this.AttackDamage - this.AttackVariance, this.AttackDamage + this.AttackVariance);
             
 
-            int crit = random.Next(0, 99);
+            int crit = random.Next(1, 100);
             if (crit <= CritChance)
             {
                 damage.DamageInflicted *= 2;
@@ -50,6 +50,11 @@ namespace TestProject
             }
 
             e.Health -= damage.DamageInflicted;
+            if (e.Health <= 0)
+            {
+                e.Health = 0;
+            }
+                
 
 
             return damage;

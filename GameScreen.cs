@@ -161,6 +161,17 @@ namespace TestProject
 
                 Shake(damage.DamageInflicted);
 
+                if (!game.Character.IsAlive)
+                {
+                    displayText("\n" + game.CurrentEnemy.Title + " has defeated you!");
+                    displayText(game.Character.Title + " blacks out...");
+
+                    buttonExitGame.Show();
+
+                    pictureBoxCharacter.Image = null;
+                    game.Character.Health = 0;
+                    game.Character.Mana = 0;
+                }
                 
             }
             else if (game.Character.IsAlive)
@@ -177,17 +188,6 @@ namespace TestProject
 
                 game.CurrentEnemy = null;
 
-            }
-            else if(game.CurrentEnemy.IsAlive)
-            {
-                displayText("\n" + game.CurrentEnemy.Title + " has defeated you!");
-                displayText(game.Character.Title + " blacks out...");
-
-                buttonExitGame.Show();
-
-                pictureBoxCharacter.Image = null;
-                game.Character.Health = 0;
-                game.Character.Mana = 0;
             }
 
             updateUI();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestProject.Enemies;
 using TestProject.NPCs;
 
 namespace TestProject
@@ -37,7 +38,8 @@ namespace TestProject
             Enemies = new List<Enemy>
             {
                 new Imp(),
-                new Boar()
+                new Boar(),
+                new Ogre()
             };
         }
 

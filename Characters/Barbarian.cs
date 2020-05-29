@@ -19,11 +19,11 @@ namespace TestProject
             AttackVariance = 1;
 
             Intellect = 0;
-            Mana = Intellect;
+            Mana = MaxMana;
 
             Dexterity = 1;
             
-            Vitality = 14;
+            Vitality = 7;
             Health = MaxHealth;
 
             Portrait = Properties.Resources.barb;
