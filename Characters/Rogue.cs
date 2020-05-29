@@ -11,13 +11,21 @@ namespace TestProject
         public Rogue()
         {
             Title = "Rogue";
-            MaxHealth = 12;
-            Health = 12;
-            MaxMana = 6;
-            Mana = 6;
-            Gold = 0;
-            AttackDamage = 4;
+
+            Vitality = 12;
+            Health = MaxHealth;
+
+            Gold = 5;
+
+            Strength = 4;
             AttackVariance = 2;
+
+            Intellect = 2;
+            Mana = Intellect;
+
+            Dexterity = 4;
+            
+
             Portrait = Properties.Resources.rog;
         }
     }

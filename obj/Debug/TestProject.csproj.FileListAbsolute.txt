@@ -9,3 +9,5 @@ C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.pdb
 C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.Menu.resources
 C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.ChooseClass.resources
 C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.GameScreen.resources
+C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.csproj.CoreCompileInputs.cache
+C:\Users\mamorris\source\repos\TestProject\obj\Debug\TestProject.LevelUp.resources

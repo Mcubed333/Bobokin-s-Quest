@@ -11,13 +11,20 @@ namespace TestProject
         public Mage()
         {
             Title = "Mage";
-            MaxHealth = 10;
-            Health = 10;
-            MaxMana = 10;
-            Mana = 10;
+
             Gold = 0;
-            AttackDamage = 3;
+
+            Strength = 3;
             AttackVariance = 1;
+
+            Intellect = 7;
+            Mana = Intellect;
+
+            Dexterity = 0;
+
+            Vitality = 10;
+            Health = MaxHealth;
+
             Portrait = Properties.Resources.mage;
         }
     }

@@ -34,11 +34,8 @@ namespace TestProject
 
         private void startGame(CharacterClass characterClass)
         {
-            this.Hide();
             Game game = new Game(characterClass);
-            GameScreen gameScreen = new GameScreen(game);
-            gameScreen.ShowDialog();
-            this.Close();
+            StaticFunctions.ChangeScreens(this, new GameScreen(game));
         }
     }
 }

@@ -12,13 +12,20 @@ namespace TestProject
         public Barbarian()
         {
             Title = "Barbarian";
-            MaxHealth = 14;
-            Health = 14;
-            MaxMana = 4;
-            Mana = 4;
+            
             Gold = 0;
-            AttackDamage = 4;
+
+            Strength = 5;
             AttackVariance = 1;
+
+            Intellect = 0;
+            Mana = Intellect;
+
+            Dexterity = 1;
+            
+            Vitality = 14;
+            Health = MaxHealth;
+
             Portrait = Properties.Resources.barb;
         }
     }

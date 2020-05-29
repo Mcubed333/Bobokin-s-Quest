@@ -11,9 +11,11 @@ namespace TestProject
         public Imp()
         {
             Title = "Imp";
-            MaxHealth = 10;
-            Health = 10;
-            AttackDamage = 2;
+            Vitality = 10;
+            Health = MaxHealth;
+            Strength = 2;
+            Intellect = 0;
+            Dexterity = 1;
             AttackVariance = 1;
             Portrait = Properties.Resources.imp;
             GoldRewarded = 2;

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Battles\Damage.cs" />
     <Compile Include="Enemies\Boar.cs" />
     <Compile Include="Characters\CharacterClass.cs" />
     <Compile Include="ChooseClass.cs">
@@ -65,21 +66,32 @@
     </Compile>
     <Compile Include="Enemies\Imp.cs" />
     <Compile Include="Characters\Mage.cs" />
+    <Compile Include="LevelUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LevelUp.Designer.cs">
+      <DependentUpon>LevelUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="NPCs\Merchant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Characters\Rogue.cs" />
     <Compile Include="Characters\Barbarian.cs" />
+    <Compile Include="StaticFunctions.cs" />
     <EmbeddedResource Include="ChooseClass.resx">
       <DependentUpon>ChooseClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameScreen.resx">
       <DependentUpon>GameScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelUp.resx">
+      <DependentUpon>LevelUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -121,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\imp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Merchant.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

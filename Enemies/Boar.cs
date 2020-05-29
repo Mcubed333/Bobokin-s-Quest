@@ -11,13 +11,15 @@ namespace TestProject
         public Boar()
         {
             Title = "Boar";
-            MaxHealth = 12;
-            Health = 12;
-            AttackDamage = 2;
+            Vitality = 12;
+            Health = MaxHealth;
+            Strength = 3;
+            Intellect = 0;
+            Dexterity = 1;
             AttackVariance = 1;
             Portrait = Properties.Resources.boar;
             GoldRewarded = 3;
-            ExperienceRewarded = 4;
+            ExperienceRewarded = 5;
         }
     }
 }
